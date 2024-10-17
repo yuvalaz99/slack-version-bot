@@ -28,8 +28,6 @@ COPY pyproject.toml poetry.lock ./
 RUN poetry install --no-root --no-dev \ 
 && python3 -m spacy download en_core_web_lg
 
-RUN ls -ltr /usr/local/bin
-
 # Copy the rest of the application code
 COPY . .
 
