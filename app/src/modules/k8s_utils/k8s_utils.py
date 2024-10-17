@@ -17,7 +17,6 @@ class KubernetesUtils:
             self.v1_endpoint_slice = client.DiscoveryV1Api()  # For EndpointSlice API
             self.application_label_selector_key = application_label_selector_key
             self.app_version_url = app_version_url
-            self.session = aiohttp.ClientSession() 
         except Exception as e:
             logging.error(f"Error initialize KubernetesUtils: {str(e)}")
     
@@ -91,7 +90,7 @@ class KubernetesUtils:
             return str(uptime).split('.')[0]  # Format uptime as a string
         return "Unknown"
 
-    def __get_endpoint_slices(self, namespace='default'):
+    def __get_endpoint_slices(self, namespace):
         """
         Retrieves EndpointSlices in the specified namespace.
         
@@ -161,13 +160,12 @@ class KubernetesUtils:
             str: The version of the service or empty string if not retrievable.
         """
         try:
-            async with aiohttp.ClientSession() as session:
-                url = f"http://{ip}:{port}{self.app_version_url}"
-                async with session.get(url, timeout=3) as response:
-                    if response.status == 200:
-                        return await response.text()
-                    else:
-                        return ""
+            url = f"http://{ip}:{port}{self.app_version_url}"
+            async with session.get(url, timeout=3) as response:
+                if response.status == 200:
+                    return await response.text()
+                else:
+                    return ""
         except Exception as e:
             logging.error(f"Error fetching version from {ip}:{port}: {str(e)}")
             return ""

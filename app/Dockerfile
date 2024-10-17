@@ -3,7 +3,7 @@ FROM python:3.11-slim
 # Set environment variables
 ENV PATH="/root/.local/bin:$PATH"
 ENV POETRY_VERSION=1.8.0
-ENV TRUFFLEHUG_VERSION=3.82.9
+ENV TRUFFLEHUG_VERSION=v3.82.9
 
 RUN apt-get update \
     && apt-get install --no-install-recommends -y \
@@ -13,12 +13,11 @@ RUN apt-get update \
         build-essential
 
 # Install Poetry and trufflehog
-RUN python3 -m pip install --user pipx \
+RUN curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/${TRUFFLEHUG_VERSION}/scripts/install.sh | sh -s -- -b /usr/local/bin \
+    && python3 -m pip install --user pipx \
     && python3 -m pipx ensurepath \
     && pipx install poetry==${POETRY_VERSION} \
-    && poetry config virtualenvs.create false \
-    && curl -sSfL https://raw.githubusercontent.com/trufflesecurity/trufflehog/${POETRY_VERSION}/scripts/install.sh | sh -s -- -b /usr/local/bin
-
+    && poetry config virtualenvs.create false 
 # Set the working directory
 WORKDIR /app
 
@@ -28,6 +27,8 @@ COPY pyproject.toml poetry.lock ./
 # Install the dependencies
 RUN poetry install --no-root --no-dev \ 
 && python3 -m spacy download en_core_web_lg
+
+RUN ls -ltr /usr/local/bin
 
 # Copy the rest of the application code
 COPY . .

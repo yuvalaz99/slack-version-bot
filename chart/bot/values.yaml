@@ -18,7 +18,7 @@ rbac:
       resources: ["pods", "pods/log"]
       verbs: ["get", "list", "watch"]
     - apiGroups: ["discovery.k8s.io"]
-      resources: ["endpointslices"]
+      resources: ["endpointslices", "endpoints"]
       verbs: ["get", "list", "watch"]
 
 service:
@@ -56,23 +56,15 @@ securityContext:
 
 resources: 
   limits:
-    cpu: 200m
-    memory: 800Mi
+    cpu: 1500m
+    memory: 2500Mi
   requests:
-    cpu: 200m
-    memory: 800Mi
+    cpu: 1500m
+    memory: 2500Mi
 
 
 livenessProbe: {}
 readinessProbe: {}
-# livenessProbe:
-#   httpGet:
-#     path: /ready
-#     port: 8080
-# readinessProbe:
-#   httpGet:
-#     path: /
-#     port: 8080
 
 volumes: []
 
@@ -83,15 +75,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-autoscaling:
-  enabled: true
-  minReplicas: 2
-  maxReplicas: 10
-  targetCPUUtilizationPercentage: 80
-
-useZoneAntiAffinity: false
-
-podDisruptionBudget:
-  enabled: true   
-  minAvailable: 1 
