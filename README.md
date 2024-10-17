@@ -26,13 +26,15 @@ The bot is production-ready, secure, and offers a seamless developer experience.
 ### Tools
 The bot utilizes the following tools to enhance security by scanning and censoring for sensitive data:
 
-- **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Learn more about Microsoft Presidio](https://github.com/microsoft/presidio).
+- **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Explore Microsoft Presidio](https://github.com/microsoft/presidio).
 
 - **TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets from your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
 
 ## Getting Started
 
 ### Installation
+
+* We will not cover how to create and configure your slack application.
 
 1. **Install Trufflehug**
 ```bash
