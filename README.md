@@ -9,6 +9,15 @@ The bot is production-ready, secure, and offers a seamless developer experience.
 - **Helm-based Deployment:** The services are deployed using the same Helm chart for easy management.
 - **Modular Design:** The bot's functionality can be easily modified, allowing you to change how the application version is fetched and define the service label selection strategy without rebuilding the code.
 
+## Demos
+<details>
+  <summary>Applications Version Demo</summary>
+  <video src='https://github.com/user-attachments/assets/b327c6b4-339e-4f91-8b0c-6acd2329869a' width=180/> 
+</details>
+<details>
+  <summary>Logs Demo</summary>
+  <video src='https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11' width=180/> 
+</details>
 
 ## Dependencies and Tools
 ### Dependencies
@@ -17,9 +26,9 @@ The bot is production-ready, secure, and offers a seamless developer experience.
 ### Tools
 The bot utilizes the following tools to enhance security by scanning and censoring for sensitive data:
 
-**Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Learn more about Microsoft Presidio](https://github.com/microsoft/presidio).
+- **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Learn more about Microsoft Presidio](https://github.com/microsoft/presidio).
 
-**TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets from your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
+- **TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets from your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
 
 ## Getting Started
 
@@ -56,15 +65,7 @@ cd src/
 python3 app.py
 ```
 
-## Demos
-<details>
-  <summary>Applications Version Demo</summary>
-  <video src='https://github.com/user-attachments/assets/b327c6b4-339e-4f91-8b0c-6acd2329869a' width=180/> 
-</details>
-<details>
-  <summary>Logs Demo</summary>
-  <video src='https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11' width=180/> 
-</details>
+
 
 
  
