@@ -58,7 +58,7 @@ python3 app.py
 
 <details>
   <summary>Logs Demo</summary>
-  https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11
+  (https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11)
 </details>
 
   
