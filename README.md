@@ -24,11 +24,11 @@ The bot is production-ready, secure, and offers a seamless developer experience.
 - Python >=3.9
 - Trufflehug >=3.82.0
 ### Tools
-The bot utilizes the following tools to enhance security by scanning and censoring for sensitive data:
+The bot utilizes the following tools to enhance security by scanning and censoring for sensitive data from your logs:
 
-- **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Explore Microsoft Presidio](https://github.com/microsoft/presidio).
+- **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII). [Explore Microsoft Presidio](https://github.com/microsoft/presidio).
 
-- **TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets from your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
+- **TruffleHog:** TruffleHog scans for sensitive information, especially credentials and API keys. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
 
 ## Getting Started
 
@@ -59,7 +59,7 @@ poetry install
 | SLACK_APP_TOKEN | string | true | Slack app token |
 | LOG_LEVEL | string | false | Log level |
 | APPLICATION_LABEL_SELECTOR_KEY | string | false | Label key that represent the serivce identity |
-| APPLICATION_VERSION_URL | string | false | From what url to fetch the service version |
+| APPLICATION_VERSION_URL | string | false | Url to fetch the service version |
 
 6. **Run the application**
 ```bash
