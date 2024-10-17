@@ -1,5 +1,4 @@
 
-https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11
 # Slack Version Bot
 
 This project is a Slack chatbot that helps developers easily find the versions of their running applications. The bot lists all running pods in a Kubernetes cluster along with their uptime and version. It also has a command to get the logs for a specific service.
@@ -56,4 +55,7 @@ poetry install
 cd src/
 python3 app.py
 ```
+
+[Logs demo](https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11)
+
 
