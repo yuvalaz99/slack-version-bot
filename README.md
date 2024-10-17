@@ -56,11 +56,20 @@ cd src/
 python3 app.py
 ```
 
+## Demos
+<details>
+  <summary>Applications Version Demo</summary>
+  <video src='https://github.com/user-attachments/assets/b327c6b4-339e-4f91-8b0c-6acd2329869a' width=180/> 
+</details>
 <details>
   <summary>Logs Demo</summary>
   <video src='https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11' width=180/> 
 </details>
 
-  
+
+ 
+
+
+ 
 
 
