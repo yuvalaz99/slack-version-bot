@@ -1,6 +1,7 @@
+
 # Slack Version Bot
 
-This project is a Slack chatbot that helps developers easily find the versions of their running applications. The bot lists all running pods in a Kubernetes cluster along with their uptime and version. It also has a command to get the last X lines of logs for a specific service.
+This project is a Slack chatbot that helps developers easily find the versions of their running applications. The bot lists all running pods in a Kubernetes cluster along with their uptime and version. It also has a command to get the logs for a specific service.
 
 The bot is production-ready, secure, and offers a seamless developer experience. 
 ## Key Features
@@ -8,6 +9,15 @@ The bot is production-ready, secure, and offers a seamless developer experience.
 - **Helm-based Deployment:** The services are deployed using the same Helm chart for easy management.
 - **Modular Design:** The bot's functionality can be easily modified, allowing you to change how the application version is fetched and define the service label selection strategy without rebuilding the code.
 
+## Demos
+<details>
+  <summary>Applications Version Demo</summary>
+  <video src='https://github.com/user-attachments/assets/b327c6b4-339e-4f91-8b0c-6acd2329869a' width=180/> 
+</details>
+<details>
+  <summary>Logs Demo</summary>
+  <video src='https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11' width=180/> 
+</details>
 
 ## Dependencies and Tools
 ### Dependencies
@@ -16,13 +26,15 @@ The bot is production-ready, secure, and offers a seamless developer experience.
 ### Tools
 The bot utilizes the following tools to enhance security by scanning and censoring for sensitive data:
 
-**Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Learn more about Microsoft Presidio](https://github.com/microsoft/presidio).
+- **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Explore Microsoft Presidio](https://github.com/microsoft/presidio).
 
-**TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets in your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
+- **TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets from your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
 
 ## Getting Started
 
 ### Installation
+
+Slack bot creation and configuration not described here and should be done manually. 
 
 1. **Install Trufflehug**
 ```bash
@@ -54,4 +66,13 @@ poetry install
 cd src/
 python3 app.py
 ```
+
+
+
+
+ 
+
+
+ 
+
 
