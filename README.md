@@ -1,6 +1,8 @@
+
+https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11
 # Slack Version Bot
 
-This project is a Slack chatbot that helps developers easily find the versions of their running applications. The bot lists all running pods in a Kubernetes cluster along with their uptime and version. It also has a command to get the last X lines of logs for a specific service.
+This project is a Slack chatbot that helps developers easily find the versions of their running applications. The bot lists all running pods in a Kubernetes cluster along with their uptime and version. It also has a command to get the logs for a specific service.
 
 The bot is production-ready, secure, and offers a seamless developer experience. 
 ## Key Features
@@ -18,7 +20,7 @@ The bot utilizes the following tools to enhance security by scanning and censori
 
 **Microsoft Presidio:** This tool is designed for data protection, providing the ability to identify and redact sensitive information, such as credit card numbers and personally identifiable information (PII), from various sources, including logs. [Learn more about Microsoft Presidio](https://github.com/microsoft/presidio).
 
-**TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets in your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
+**TruffleHog:** TruffleHog scans files for sensitive information, especially credentials and API keys, helping to identify and prevent the accidental exposure of secrets from your logs. [Explore TruffleHog](https://github.com/trufflesecurity/trufflehogs).
 
 ## Getting Started
 
