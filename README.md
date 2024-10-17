@@ -34,7 +34,7 @@ The bot utilizes the following tools to enhance security by scanning and censori
 
 ### Installation
 
-* We will not cover how to create and configure your slack application.
+Slack bot creation and configuration not described here and should be done manually. 
 
 1. **Install Trufflehug**
 ```bash
