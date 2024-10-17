@@ -111,6 +111,7 @@ async def handle_version_request(ack, body, respond):
         None: Sends the appropriate response (service info or help) back to the user via Slack.
     """
     try:
+        # Acknowledge the user that the command has recieved
         await ack()
         event_payload = body['text']
         logging.info(f"Received event: {event_payload}")
@@ -151,6 +152,7 @@ async def handle_logs_request(ack, body, respond):
         None: Sends the service logs or help message back to the user via Slack.
     """
     try:
+        # Acknowledge the user that the command has recieved
         await ack()
         event_payload = body['text']
         logging.info(f"Received event: {event_payload}")
