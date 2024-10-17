@@ -1,0 +1,97 @@
+# -- Overrides the chart's name
+nameOverride: null
+
+# -- Overrides the chart's computed fullname
+fullnameOverride: null
+
+serviceAccount:
+  create: true
+  annotations: {}
+  automount: true
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+rbac:
+  rules:
+    - apiGroups: [""]
+      resources: ["pods", "pods/log"]
+      verbs: ["get", "list", "watch"]
+    - apiGroups: ["discovery.k8s.io"]
+      resources: ["endpointslices"]
+      verbs: ["get", "list", "watch"]
+
+service:
+  type: ClusterIP
+  port: 8080
+
+
+extraEnv: [] 
+
+extraEnvFrom: []
+
+secret:
+  name: "slack-credentials"
+  data:
+    SLACK_BOT_TOKEN: ""
+    SLACK_APP_TOKEN: ""
+
+
+image:
+  repository: yuval0499/bot
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+
+podAnnotations: {}
+
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: 
+  runAsNonRoot: true
+  runAsUser: 1000
+
+resources: 
+  limits:
+    cpu: 200m
+    memory: 800Mi
+  requests:
+    cpu: 200m
+    memory: 800Mi
+
+
+livenessProbe: {}
+readinessProbe: {}
+# livenessProbe:
+#   httpGet:
+#     path: /ready
+#     port: 8080
+# readinessProbe:
+#   httpGet:
+#     path: /
+#     port: 8080
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 80
+
+useZoneAntiAffinity: false
+
+podDisruptionBudget:
+  enabled: true   
+  minAvailable: 1 

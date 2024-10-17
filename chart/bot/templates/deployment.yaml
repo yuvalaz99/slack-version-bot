@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "bot.fullname" . }}
+  labels:
+    {{- include "bot.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "bot.labels" . | nindent 8 }}
+      {{- with .Values.podLabels }}
+      {{- toYaml . | nindent 8 }}
+      {{- end }}
+  template:
+    metadata:
+      labels:
+        {{- include "bot.labels" . | nindent 8 }}
+        {{- with .Values.podLabels }}
+        {{- toYaml . | nindent 8 }}
+        {{- end }}
+    spec:
+      serviceAccountName: {{ include "bot.serviceAccountName" . }}
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: {{ .Values.service.port }}  
+        resources:
+          {{- toYaml .Values.resources | nindent 12 }}
+        env:
+          {{- range .Values.extraEnv }}
+          - name: {{ .name }}
+            value: "{{ .value }}"
+          {{- end }}
+        envFrom:
+          {{- range .Values.extraEnvFrom }}
+          - {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- if .Values.secret }}
+          - secretRef:
+              name: {{ include "bot.secretName" . }}
+          {{- end }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
