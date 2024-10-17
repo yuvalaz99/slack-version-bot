@@ -15,7 +15,7 @@ The bot is production-ready, secure, and offers a seamless developer experience.
   <video src='https://github.com/user-attachments/assets/b327c6b4-339e-4f91-8b0c-6acd2329869a' width=180/> 
 </details>
 <details>
-  <summary>Logs Demo</summary>
+  <summary>Logs Demo ( including sensitive data censoring )</summary>
   <video src='https://github.com/user-attachments/assets/929df853-1efc-42d1-9e6d-7e8206fdce11' width=180/> 
 </details>
 
